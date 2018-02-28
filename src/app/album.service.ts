@@ -33,4 +33,9 @@ export class AlbumService {
     }); //update is an AngularFire's built in method
   }
 
+  deleteAlbum(localAlbumToDelete) {
+    var albumEntryInFirebase = this.getAlbumById(localAlbumToDelete.$key);
+    albumEntryInFirebase.remove();
+  }
+
 }
